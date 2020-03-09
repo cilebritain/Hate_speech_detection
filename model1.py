@@ -85,7 +85,7 @@ trainer = Trainer(data_bundle.get_dataset('train'), model,
                   optimizer=Adam(model_params=model.parameters(), lr=2e-5),
                   loss=CrossEntropyLoss(), device=device,
                   batch_size=8, dev_data=data_bundle.get_dataset('train'),
-                  metrics=AccuracyMetric(), n_epochs=2, print_every=1)
+                  metrics=AccuracyMetric(), n_epochs=10, print_every=1)
 trainer.train()
 
 tester = Tester(data_bundle.get_dataset('test'), model, batch_size=128, metrics=AccuracyMetric())
